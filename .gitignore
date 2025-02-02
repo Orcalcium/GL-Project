@@ -412,5 +412,5 @@ CMakeCache.txt
 *.stamp.list
 .vscode/
 CMakeFiles/
-include/GLFW/build
-include/GLFW/install
+include/GLFW/
+include/GLFW/
