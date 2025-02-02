@@ -1,0 +1,2 @@
+this is just a placeholder for the directory of glfw Installtion.
+please refer to ReadMe.md for more information about building glfw.
