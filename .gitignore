@@ -412,3 +412,11 @@ CMakeCache.txt
 *.stamp.list
 .vscode/
 CMakeFiles/
+#imported libraries in ./include
+include/
+
+#files generated in linux environment
+Makefile
+project
+build.ninja
+build/
