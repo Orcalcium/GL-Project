@@ -128,8 +128,9 @@ int main()
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 
+    Cube cube;
     // Set up vertex data (and buffer(s)) and configure vertex attributes
-    std::cout<<sizeof(Mesh::cube)<<std::endl;
+    std::cout << cube.getVertCount() << std::endl;
 
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
@@ -138,7 +139,7 @@ int main()
     glBindVertexArray(VAO);
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(Mesh::cube), Mesh::cube, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, cube.getVertCount()* sizeof(float), cube.getMesh(), GL_STATIC_DRAW);
 
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);

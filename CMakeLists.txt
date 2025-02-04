@@ -9,6 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_executable(project 
     ./code/main.cpp
     ./code/fileloader/fileLoader.cpp 
+    ./code/mesh/mesh.cpp
     ./include/glad/glad.c
 )
 
