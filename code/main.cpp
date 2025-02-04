@@ -94,7 +94,6 @@ int main()
     unsigned int crosshairShaderProgram = buildCrosshairShaderProgram();
     Cube cube;
     // Set up vertex data (and buffer(s)) and configure vertex attributes
-    std::cout << cube.getVertCount() << std::endl;
 
     unsigned int sceneVBO, sceneVAO;
     sendVertData(sceneVBO, sceneVAO, cube.getMesh(), cube.getVertCount());

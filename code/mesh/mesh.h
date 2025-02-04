@@ -11,7 +11,7 @@ class Cube : public Mesh {
             return cube;
         }
         int getVertCount() {
-            return sizeof(cube);
+            return sizeof(cube)/sizeof(float);
         }
     private:
         static float cube[108];
@@ -23,7 +23,7 @@ class Crosshair : public Mesh {
             return crosshair;
         }
         int getVertCount() {
-            return sizeof(crosshair);
+            return sizeof(crosshair) / sizeof(float) / 3*4;
         }
     private:
         static float crosshair[12];
