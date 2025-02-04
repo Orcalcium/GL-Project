@@ -22,7 +22,9 @@ void processInput(GLFWwindow *window);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 void drawCrosshair(unsigned int shaderProgram, unsigned int VAO, int vertCount);
 void drawScene(unsigned int shaderProgram, unsigned int VAO, int vertCount);
-
+//Variabled to store window size
+float WINDOW_WIDTH = 800.0f;
+float WINDOW_HEIGHT = 600.0f;
 // Variables to store rotation angles and last mouse position
 float yaw = -90.0f;
 float pitch = 0.0f;
@@ -137,6 +139,8 @@ int main()
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
+    WINDOW_HEIGHT=height;
+    WINDOW_WIDTH=width;
     glViewport(0, 0, width, height);
 }
 
@@ -315,7 +319,7 @@ void drawScene(unsigned int shaderProgram, unsigned int VAO, int vertCount){
     // Transformation matrices
     glm::mat4 model = glm::mat4(1.0f); // Keep model static
     glm::mat4 view  = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
-    glm::mat4 projection = glm::perspective(glm::radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
+    glm::mat4 projection = glm::perspective(glm::radians(45.0f), WINDOW_WIDTH / WINDOW_HEIGHT, 0.1f, 100.0f);
 
     // Retrieve uniform locations (unchanged)
     unsigned int modelLoc = glGetUniformLocation(shaderProgram, "model");
@@ -337,7 +341,7 @@ void drawCrosshair(unsigned int shaderProgram, unsigned int VAO, int vertCount)
     glUseProgram(shaderProgram);
 
     // Transformation matrices
-    glm::mat4 projection = glm::ortho(0.0f, 800.0f, 0.0f, 600.0f); // Orthographic projection
+        glm::mat4 projection = glm::ortho(-WINDOW_WIDTH / 2.0f, WINDOW_WIDTH / 2.0f, -WINDOW_HEIGHT / 2.0f, WINDOW_HEIGHT / 2.0f); // Orthographic projection centered at (0, 0); // Orthographic projection
 
     // Retrieve uniform locations
     unsigned int projectionLoc = glGetUniformLocation(shaderProgram, "projection");

@@ -45,9 +45,9 @@ float Cube::cube[108] = {
 };
 float Crosshair::crosshair[12] = {
     // Horizontal line
-    395.0f, 300.0f, 0.0f,
-    405.0f, 300.0f, 0.0f,
+    -10.0f,  0.0f, 0.0f,
+     10.0f,  0.0f, 0.0f,
     // Vertical line
-    400.0f, 295.0f, 0.0f,
-    400.0f, 305.0f, 0.0f
+     0.0f, -10.0f, 0.0f,
+     0.0f,  10.0f, 0.0f
 };
