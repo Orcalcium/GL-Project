@@ -16,3 +16,15 @@ class Cube : public Mesh {
     private:
         static float cube[108];
 };
+
+class Crosshair : public Mesh {
+    public:
+        float* getMesh() override {
+            return crosshair;
+        }
+        int getVertCount() {
+            return sizeof(crosshair);
+        }
+    private:
+        static float crosshair[12];
+};
